@@ -3,12 +3,23 @@
 
 ## IonicApp - 网易云音乐
 
+
 <div style="display: flex; margin-top: 12px;">
 成果截图
 </div>
 
+## Ionic2
+[Ionic2官网](http://ionicframework.com/getting-started/)
+
 ## 开源API调用
 [网易云音乐 API](https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=neteasecloudmusicapi)
+```bash
+git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git
+
+npm install
+
+PORT=4000 node app.js
+```
 
 ## 功能
 - [ ] 发现音乐模块
