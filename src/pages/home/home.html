@@ -1,12 +1,33 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>发现音乐</ion-title>
+      <div class="search-bar">
+          <div class="mike" *ngIf="!isSearch"></div>
+          <ion-searchbar
+            [(ngModel)]="searchQuery"
+            showCancelButton="true"
+            cancelButtonText="取消"
+            (ionInput)="getItems($event)"
+            (ionCancel)="searchCancel($event)"
+            animated="true"
+            placeholder="搜索音乐"
+            class="search-input"
+          >
+          </ion-searchbar>
+          <div class="running" *ngIf="!isSearch"></div>
+      </div>
+      
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ul>
-      
+  <div class="search-container" *ngIf="isSearch">
+      正在搜索
+  </div>
+  <ul class="tab-container">
+    <li class="tab-item active-item">个性推荐</li>
+    <li class="tab-item">歌单</li>
+    <li class="tab-item">主播电台</li>
+    <li class="tab-item">排行榜</li>
   </ul>
 
 </ion-content>

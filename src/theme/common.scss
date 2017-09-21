@@ -1,0 +1,14 @@
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+// 改变theme容器的padding值
+.scroll-content {
+    padding: 0 !important;
+}
