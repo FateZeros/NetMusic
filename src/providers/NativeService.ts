@@ -29,8 +29,7 @@ export class NativeService {
   	})
   	this.loading.present()
   	setTimeout(() => {
-      this.loadingIsOpen && this.loading.dismiss()
-      this.loadingIsOpen = false
+      this.loading.dismiss()
     }, REQUEST_TIMEOUT)
   }
 
