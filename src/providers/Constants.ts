@@ -11,4 +11,4 @@ export const DEFAULT_AVATAR = './assets/img/avatar.png';
 export const PAGE_SIZE = 10;
 
 //请求超时时间,单位为毫秒
-export const REQUEST_TIMEOUT = 12000;
+export const REQUEST_TIMEOUT = 3000;

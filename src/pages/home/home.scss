@@ -105,3 +105,57 @@ ion-label {
     height: 146px;
     margin-top: 40px;
 }
+
+.home-intro {
+    width: 100%;
+    height: 104px;
+    margin-top: 0;
+    border-bottom: 1px #e3e3e3 solid;
+}
+
+.intro-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-fm {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/icon/fm.png) no-repeat center;
+    background-size: 40px 40px;
+    border: 1px solid #bfbfbf;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.intro-info {
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.intro-song {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/icon/calendar.png) no-repeat center;
+    background-size: 44px 40px;
+    border: 1px solid #bfbfbf;
+    border-radius: 50%;
+    margin: 0 auto;
+    line-height: 68px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.intro-songRank {
+    width: 60px;
+    height: 60px;
+    background: url(/assets/icon/songRank.png) no-repeat center;
+    background-size: 40px 40px;
+    border: 1px solid #bfbfbf;
+    border-radius: 50%;
+    margin: 0 auto;
+}

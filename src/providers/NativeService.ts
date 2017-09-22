@@ -3,31 +3,43 @@
 */
 import { Injectable } from '@angular/core';
 import { 
-	LoadingController, 
+  LoadingController, 
+  ToastController,
 	Loading, 
-} from "ionic-angular"
-import { REQUEST_TIMEOUT } from "./Constants"
+} from "ionic-angular";
+
+import { REQUEST_TIMEOUT } from "./Constants";
 
 @Injectable()
 export class NativeService {
 	private loading: Loading;
 
-	constructor(private loadingCtrl: LoadingController) {
+	constructor(private loadingCtrl: LoadingController, private toastCtrl: ToastController) {
 
-	}
+  }
+  
+  /**
+   *  显示Top Toast
+   */
+  showTopToast(message: string = ''): void {
+    const toast = this.toastCtrl.create({
+      message,
+      duration: 3000,
+      position: 'top'
+    })
+    toast.present()
+  }
 
 	/**
    * 统一调用此方法显示loading
    * @param content 显示的内容
    */
   showLoading(content: string = ''): void {
-  	this.loading = this.loadingCtrl.create({
-  		content: content
+  	const loading = this.loadingCtrl.create({
+      content,
+      duration: 3000
   	})
-  	this.loading.present()
-  	setTimeout(() => {
-      this.loading.dismiss()
-    }, REQUEST_TIMEOUT)
+  	loading.present()
   }
 
   /**

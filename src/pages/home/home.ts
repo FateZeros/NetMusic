@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Injectable } from "@angular/core";
 
-import { Response, Http } from "@angular/http";
-import { HttpService } from "../../providers/HttpService";
+import { Http } from "@angular/http";
 
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
+
+import { NativeService } from '../../providers/NativeService';
 
 @Component({
   selector: 'page-home',
@@ -17,13 +18,14 @@ export class HomePage {
   //是否正在搜索 
   private isSearch: boolean = false
   searchQuery: String = ''
-  //bannerList
+  // banner图片列表
   public bannerList: Observable<any>
+  // 推荐歌单
+  public introSongList: Observable<any>
 
-  constructor(public http: Http, public httpService: HttpService) {
-    this.http.get('/api/banner').map(res => res.json()).subscribe(data => {
-      this.bannerList = data.banners
-    })
+  constructor(public http: Http, public nativeService: NativeService) {
+    this.getBannerList()
+    this.getIntroSongList()
   }
 
   // searchBar焦点事件
@@ -43,5 +45,33 @@ export class HomePage {
 
   onSearchCancel () {
     this.isSearch = false
+  }
+
+  /*
+  * 获取banner列表
+  */
+  getBannerList () {
+    this.http.get('/api/banner').map(res => res.json()).subscribe(
+      data => {
+        this.bannerList = data.banners
+      },
+      err => {
+        this.nativeService.showTopToast('获取banner，网络错误')
+      }
+    )
+  }
+
+  /*
+  * 获取推荐歌单
+  */
+  getIntroSongList () {
+    this.http.get('/api/personalized').map(res => res.json()).subscribe(
+      data => {
+        this.introSongList = data.result
+      },
+      err => {
+        this.nativeService.showTopToast('推荐歌单，网络错误')
+      }
+    )
   }
 }

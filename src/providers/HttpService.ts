@@ -22,17 +22,15 @@ export class HttpService {
 	}
 
 	public request(url: string, options: RequestOptionsArgs): Observable<Response> {
-		url = APP_SERVE_URL + url 
 		return Observable.create(observer => {
 			console.log('%c 请求前 %c', 'color:blue', '', 'url', url, 'options', options)
-			this.http.request(url, options).timeout(REQUEST_TIMEOUT).subscribe(res => {
+			this.http.get(url).timeout(REQUEST_TIMEOUT).subscribe(res => {
 				observer.onNext(res)
 			}, err => {
 				// this.requestFailed(url, options, err)
 				observer.onError(err)
 			})
 		})
-		// return this.http.get(url)
 	}
 
 	public get(url: string, paramMap: any = null): Observable<Response> {
