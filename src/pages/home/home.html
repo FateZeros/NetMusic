@@ -77,17 +77,12 @@
   <ion-slides
     [pager]="true"
     [loop]="true"
-    autoplay="3000"
     class="home-baner"
   >
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
-    </ion-slide>
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
-    </ion-slide>
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
+    <ion-slide
+      *ngFor="let banner of bannerList"
+    >
+      <img src="{{banner.pic}}" />
     </ion-slide>
   </ion-slides>
 

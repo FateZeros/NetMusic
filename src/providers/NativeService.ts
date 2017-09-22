@@ -3,17 +3,14 @@
 */
 import { Injectable } from '@angular/core';
 import { 
-	ToastController, 
 	LoadingController, 
-	Platform, 
 	Loading, 
-	AlertController 
 } from "ionic-angular"
 import { REQUEST_TIMEOUT } from "./Constants"
 
+@Injectable()
 export class NativeService {
 	private loading: Loading;
-	private loadingIsOpen: boolean = false;
 
 	constructor(private loadingCtrl: LoadingController) {
 

@@ -9,7 +9,7 @@
 </div>
 
 ## Ionic
-[Ionic官网](http://ionicframework.com/getting-started/)
+[Ionic官网](http://ionicframework.com/getting-started/)<br>
 使用命令查看当前配置信息
 ```bash
 ionic info

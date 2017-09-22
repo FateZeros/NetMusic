@@ -1,48 +1,44 @@
 /**
 *  Http服务
 */
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import {
 	Http,
 	Response,
-	Headers,
 	RequestOptions,
-	URLSearchParams,
 	RequestOptionsArgs,
 	RequestMethod
-} from '@angular/http';
-import 'rxjs/add/operator/toPromise';
-import { Observable, TimeoutError } from "rxjs"
-import { NativeService } from "./NativeService"
+} from '@angular/http'
+import 'rxjs/add/operator/map'
+
+import { Observable } from "rxjs"
+// import { NativeService } from "./NativeService"
 import { APP_SERVE_URL, REQUEST_TIMEOUT } from "./Constants"
 
 @Injectable()
 export class HttpService {
-	constructor(public http: Http, private nativeService: NativeService) {
+	constructor(public http: Http) {
 
 	}
 
-	public request(url: string, options: RequestOptions): Observable<Response> {
+	public request(url: string, options: RequestOptionsArgs): Observable<Response> {
+		url = APP_SERVE_URL + url 
 		return Observable.create(observer => {
-			this.nativeService.showLoading()
 			console.log('%c 请求前 %c', 'color:blue', '', 'url', url, 'options', options)
 			this.http.request(url, options).timeout(REQUEST_TIMEOUT).subscribe(res => {
-				this.nativeService.hideLoading()
-				observer.next(res)
+				observer.onNext(res)
 			}, err => {
-				this.requestFailed(url, options, err)
-				observer.error(err)
+				// this.requestFailed(url, options, err)
+				observer.onError(err)
 			})
 		})
+		// return this.http.get(url)
 	}
 
-	/**
-   * 处理请求失败事件
-   * @param url
-   * @param options
-   * @param err
-   */
-  private requestFailed(url: string, options: RequestOptionsArgs, err: Response): void {
-    
-  }
+	public get(url: string, paramMap: any = null): Observable<Response> {
+		return this.request(url, new RequestOptions({
+			method: RequestMethod.Get,
+			search: paramMap
+		}))
+	}
 }
