@@ -4,12 +4,26 @@ html, body {
     padding: 0;
 }
 
-ul {
+ul, li {
     list-style: none;
 }
 
 // 改变theme容器的padding值
 .scroll-content {
     padding: 0 !important;
+}
+
+.icon-clock {
+    width: 24px;
+    height: 24px;
+    background: url(/assets/icon/clock.png) no-repeat center;
+    background-size: 24px 24px;
+}
+
+.icon-close {
+    width: 24px;
+    height: 24px;
+    background: url(/assets/icon/close.png) no-repeat center;
+    background-size: 24px 24px;
 }
 

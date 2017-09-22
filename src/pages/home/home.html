@@ -22,22 +22,73 @@
 
 <ion-content padding>
   <!-- 搜索记录 -->
-  <ion-grid class="search-container" *ngIf="!isSearch">
+  <ion-grid class="search-container" *ngIf="isSearch">
     <ion-row class="singer-classes">
       <ion-icon class="person"></ion-icon>
       歌手分类
       <ion-icon class="right-arrow"></ion-icon>
     </ion-row>
-    <ion-row>
+    <ion-row class="hot-search">
       热门搜索
     </ion-row>
+    <ion-row>
+        <ion-col class="hot-search-item">那年花开月正圆</ion-col>
+        <ion-col class="hot-search-item">Taylor Swift</ion-col>
+        <ion-col class="hot-search-item">你曾说</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="hot-search-item">成都</ion-col>
+        <ion-col class="hot-search-item">卡农</ion-col>
+        <ion-col class="hot-search-item">Lady Gaga</ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="hot-search-item">Something just like this</ion-col>
+        <ion-col class="hot-search-item">Taylor Swift</ion-col>
+    </ion-row>
+    <ion-list class="histort-list">
+      <ion-item>
+        <ion-icon class="icon-clock" item-start></ion-icon>
+          兄弟
+        <ion-icon class="icon-close" item-end></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="icon-clock" item-start></ion-icon>
+          虫儿飞
+        <ion-icon class="icon-close" item-end></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="icon-clock" item-start></ion-icon>
+          周杰伦
+        <ion-icon class="icon-close" item-end></ion-icon>
+      </ion-item>
+    </ion-list>
+    
   </ion-grid>
   
-  <ul class="tab-container">
+  <!-- 首页 顶部tabs -->
+  <ion-row class="tab-container">
     <li class="tab-item active-item">个性推荐</li>
     <li class="tab-item">歌单</li>
     <li class="tab-item">主播电台</li>
     <li class="tab-item">排行榜</li>
-  </ul>
+  </ion-row>
+
+  <!-- 首页 banner -->
+  <ion-slides
+    [pager]="true"
+    [loop]="true"
+    autoplay="3000"
+    class="home-baner"
+  >
+    <ion-slide style="background-color: green">
+      <h2>Slide 1</h2>
+    </ion-slide>
+    <ion-slide style="background-color: blue">
+      <h2>Slide 2</h2>
+    </ion-slide>
+    <ion-slide style="background-color: red">
+      <h2>Slide 3</h2>
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>
