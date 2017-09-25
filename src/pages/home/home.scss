@@ -21,7 +21,7 @@
     width: 100%;
     height: 100%;
     background: #fff;
-    z-index: 2;
+    z-index: 100;
 }
 
 .singer-classes {
@@ -89,6 +89,8 @@ ion-label {
     margin: 0;
     padding: 0 20px;
     display: flex;
+    z-index: 99;
+    background: #fff;
 }
 
 .tab-item {
@@ -159,4 +161,46 @@ ion-label {
     border: 1px solid #bfbfbf;
     border-radius: 50%;
     margin: 0 auto;
+}
+
+.home-list-item {
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+}
+
+.home-list-title {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-left: 3px solid #474b4c;  
+    padding-left: 12px;  
+}
+
+.h-list-title {
+    height: 30px;
+}
+
+.song-list-six {
+    justify-content: space-between;
+}
+
+.song-list-item {
+    width: 122px;
+    height: 177px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-song-pic {
+    width: 122px;
+    height: 122px;
+}
+
+.intro-song-name {
+    width: 122px;
+    height: 55px;
+    font-size: 12px;
+    padding: 5px;
 }

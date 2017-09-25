@@ -105,7 +105,25 @@
   </ion-row>
 
   <!-- 首页推荐 歌单 -->
+  <ion-row class="home-list-item">
+    <ion-row class="home-list-title">
+      推荐歌单
+      <ion-icon class="right-arrow h-list-title"></ion-icon>
+    </ion-row>
+  </ion-row> 
+  <ion-row class="song-list-six">
+    <div class="song-list-item" *ngFor="let introSong of introSongList">
+      <img src="{{introSong.picUrl}}" class="intro-song-pic" />
+      <div class="intro-song-name">{{introSong.name}}</div>
+    </div>
+  </ion-row>
   
-
+  <!-- 首页 独家放送 -->
+  <ion-row class="home-list-item">
+    <ion-row class="home-list-title">
+      独家放送
+      <ion-icon class="right-arrow h-list-title"></ion-icon>
+    </ion-row>
+  </ion-row>
 
 </ion-content>
