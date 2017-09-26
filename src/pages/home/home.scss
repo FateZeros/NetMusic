@@ -181,11 +181,11 @@ ion-label {
     height: 30px;
 }
 
-.song-list-six {
+.item-list-content {
     justify-content: space-between;
 }
 
-.song-list-item {
+.item-list-one {
     width: 122px;
     height: 177px;
     position: relative;
@@ -193,14 +193,86 @@ ion-label {
     flex-direction: column;
 }
 
-.intro-song-pic {
+.mv-one {
+    width: 180px;
+    height: 170px;
+}
+
+.list-one-pic {
     width: 122px;
     height: 122px;
 }
 
-.intro-song-name {
+.mv-pic {
+    width: 180px;
+    height: 120px;
+}
+
+.list-one-name {
     width: 122px;
     height: 55px;
     font-size: 12px;
     padding: 5px;
+    overflow: hidden;
+}
+
+.list-mv-name {
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    overflow: hidden;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list-mv-name:nth-child(2n) {
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.list-mv-name:nth-child(2n + 1) {
+    color: #666;
+}
+
+.item-play-count {
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 4px;
+    padding-top: 2px;
+
+    .play-count-span {
+        position: relative;
+    }
+
+    .play-count-span:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: url(/assets/icon/playCount.svg) no-repeat center;
+        position: absolute;
+        left: -18px;
+        top: -1px;
+    }
+
+    .mv-count-span {
+        position: relative;
+    }
+
+    .mv-count-span:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: url(/assets/icon/playCount-mv.svg) no-repeat center;
+        position: absolute;
+        left: -18px;
+        top: -1px;
+    }
 }

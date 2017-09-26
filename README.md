@@ -33,7 +33,15 @@ git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git
 npm install
 
 PORT=4000 node app.js
+
+// type说明
+{
+    "5": "MV",
+    "6": "文章",
+    "19": "🔗"
+}
 ```
+
 
 ## 功能
 - [ ] 发现音乐模块

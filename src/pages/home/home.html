@@ -111,10 +111,13 @@
       <ion-icon class="right-arrow h-list-title"></ion-icon>
     </ion-row>
   </ion-row> 
-  <ion-row class="song-list-six">
-    <div class="song-list-item" *ngFor="let introSong of introSongList">
-      <img src="{{introSong.picUrl}}" class="intro-song-pic" />
-      <div class="intro-song-name">{{introSong.name}}</div>
+  <ion-row class="item-list-content">
+    <div class="item-list-one" *ngFor="let introSong of introSongList">
+      <img src="{{introSong.picUrl}}" class="list-one-pic" />
+      <div class="list-one-name">{{introSong.name}}</div>
+      <div class="item-play-count">
+        <span class="play-count-span">{{introSong.playCount}}</span>
+      </div>
     </div>
   </ion-row>
   
@@ -125,5 +128,39 @@
       <ion-icon class="right-arrow h-list-title"></ion-icon>
     </ion-row>
   </ion-row>
+
+  <!-- 首页 推荐MV -->
+  <ion-row class="home-list-item">
+    <ion-row class="home-list-title">
+      推荐MV
+      <ion-icon class="right-arrow h-list-title"></ion-icon>
+    </ion-row>
+  </ion-row>
+  <ion-row class="item-list-content">
+    <div class="item-list-one mv-one" *ngFor="let introMv of introMvList">
+      <img src="{{introMv.picUrl}}" class="list-one-pic mv-pic" />
+      <div class="list-mv-name">{{introMv.name}}</div>
+      <div class="list-mv-name">{{introMv.artistName}}</div>
+      <div class="item-play-count">
+        <span class="mv-count-span">{{introMv.playCount}}</span>
+      </div>
+    </div>
+  </ion-row>
+
+  <!-- 首页 主播电台 -->
+  <ion-row class="home-list-item">
+    <ion-row class="home-list-title">
+      主播电台
+      <ion-icon class="right-arrow h-list-title"></ion-icon>
+    </ion-row>
+  </ion-row>
+  <ion-row class="item-list-content">
+    <div class="item-list-one" *ngFor="let djProgram of djProgramList">
+      <img src="{{djProgram.picUrl}}" class="list-one-pic" />
+      <div class="list-one-name">{{djProgram.name}}</div>
+    </div>
+  </ion-row>
+
+
 
 </ion-content>
