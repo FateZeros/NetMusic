@@ -15,7 +15,7 @@
         (ionFocus)="searchBarFocus()"
       >
       </ion-searchbar>
-      <ion-icon class="running" *ngIf="!isSearch"></ion-icon>
+      <ion-icon class="running" *ngIf="!isSearch" (click)="toPlayingMuisc()"></ion-icon>
     </ion-row>
   </ion-navbar>
 </ion-header>
@@ -79,9 +79,7 @@
     [loop]="true"
     class="home-baner"
   >
-    <ion-slide
-      *ngFor="let banner of bannerList"
-    >
+    <ion-slide *ngFor="let banner of bannerList">
       <img src="{{banner.pic}}" />
     </ion-slide>
   </ion-slides>
@@ -129,9 +127,11 @@
     </ion-row>
   </ion-row>
   <ion-row class="item-list-content">
-    <div class="item-list-one" *ngFor="let private of privateContent | filter: { width: 640 }">
-      <img src="{{private.picUrl}}" class="list-one-pic" />
-      <div class="list-one-name">{{private.name}}</div>
+    <div class="item-list-one mv-one" *ngFor="let private of privateContent | filter: { width: 640 }">
+      <img src="{{private.picUrl}}" class="list-one-pic mv-pic" />
+      <div class="list-private-name">{{private.name}}</div>
+      <div class="private-type-pic" *ngIf="private.type == 24"></div>
+      <div class="private-type-pic articl-pic" *ngIf="private.type == 19"></div>
     </div>
   </ion-row>
 

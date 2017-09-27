@@ -72,5 +72,16 @@ PORT=4000 node app.js
 ## 知识点
 1.[sass-map](https://www.w3cplus.com/preprocessor/sass-maps.html)<br>
 
+## 国外论坛
+[forum论坛](https://forum.ionicframework.com)
+
 ## 遇到的问题
+Q:进入详情页面(二级页面)，去掉tabs？<br>
+A:
+```bash
+this.navCtrl.push(NewPage) => this.appCtrl.getRootNav().push(NewPage)
+
+this.appCtrl.getRootNav() deprecated => getRootNavById()
+```
+
 

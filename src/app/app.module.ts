@@ -8,6 +8,7 @@ import { FriendPage } from '../pages/friend/friend';
 import { HomePage } from '../pages/home/home';
 import { MinePage } from '../pages/mine/mine';
 import { TabsPage } from '../pages/tabs/tabs';
+import { PlayingMusic } from '../pages/playingMusic/playingMusic'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +27,7 @@ import { filterPipe } from '../pipes/filterPipe';
     HomePage,
     MinePage,
     TabsPage,
+    PlayingMusic,
     filterPipe
   ],
   imports: [
@@ -40,7 +42,8 @@ import { filterPipe } from '../pipes/filterPipe';
     FriendPage,
     HomePage,
     MinePage,
-    TabsPage
+    TabsPage,
+    PlayingMusic
   ],
   providers: [
     StatusBar,

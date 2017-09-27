@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController, NavParams, App } from 'ionic-angular';
 import { Injectable } from "@angular/core";
 
 import { Http } from "@angular/http";
@@ -7,6 +8,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
 import { NativeService } from '../../providers/NativeService';
+import { PlayingMusic } from '../playingMusic/playingMusic';
 
 @Component({
   selector: 'page-home',
@@ -31,7 +33,12 @@ export class HomePage {
   // 主播电台
   public djProgramList: Observable<any>
 
-  constructor(public http: Http, public nativeService: NativeService) {
+  constructor(
+    public http: Http, 
+    public navCtrl: NavController, 
+    public appCtrl: App, 
+    public nativeService: NativeService
+  ) {
     this.today = new Date()
     this.getBannerList()
     this.getIntroSongList()
@@ -99,7 +106,6 @@ export class HomePage {
     this.http.get('/api/personalized/privatecontent').map(res => res.json()).subscribe(
       data => {
         this.privateContent = data.result
-        console.log(this.privateContent)
       },
       err => {
         this.nativeService.showTopToast('独家放送，网络错误')
@@ -135,5 +141,15 @@ export class HomePage {
         this.djProgramList = data.result
       }
     )
+  }
+
+  /**
+   * 跳转到 正在播放的音乐
+   * 页面 不带footer
+   */
+  toPlayingMuisc () {
+    // console.log(this.appCtrl.getRootNav())
+    this.appCtrl.getRootNav().push(PlayingMusic)
+    // this.appCtrl.getRootNavById('n4')
   }
 }
