@@ -15,8 +15,10 @@ import { NativeService } from '../../providers/NativeService';
 
 @Injectable()
 export class HomePage {
+  // 当前日期
+  public today: Date
   //是否正在搜索 
-  private isSearch: boolean = false
+  public isSearch: boolean = false
   searchQuery: String = ''
   // banner图片列表
   public bannerList: Observable<any>
@@ -30,10 +32,12 @@ export class HomePage {
   public djProgramList: Observable<any>
 
   constructor(public http: Http, public nativeService: NativeService) {
+    this.today = new Date()
     this.getBannerList()
     this.getIntroSongList()
     this.getIntroMvList()
     this.getDjProgramList()
+    this.getPrivateContent()
   }
 
   // searchBar焦点事件
@@ -95,6 +99,7 @@ export class HomePage {
     this.http.get('/api/personalized/privatecontent').map(res => res.json()).subscribe(
       data => {
         this.privateContent = data.result
+        console.log(this.privateContent)
       },
       err => {
         this.nativeService.showTopToast('独家放送，网络错误')

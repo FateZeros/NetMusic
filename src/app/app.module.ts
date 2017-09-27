@@ -16,6 +16,8 @@ import { HttpModule } from "@angular/http";
 import { HttpService } from "../providers/HttpService";
 import { NativeService } from "../providers/NativeService";
 
+import { filterPipe } from '../pipes/filterPipe';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +25,8 @@ import { NativeService } from "../providers/NativeService";
     FriendPage,
     HomePage,
     MinePage,
-    TabsPage
+    TabsPage,
+    filterPipe
   ],
   imports: [
     BrowserModule,

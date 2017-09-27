@@ -94,7 +94,7 @@
     </li>
     <li class="intro-item">
       <div class="intro-song">
-        21
+        {{today | date: 'dd'}}
       </div>
       <div class="intro-info">每日歌曲推荐</div>
     </li>
@@ -127,6 +127,12 @@
       独家放送
       <ion-icon class="right-arrow h-list-title"></ion-icon>
     </ion-row>
+  </ion-row>
+  <ion-row class="item-list-content">
+    <div class="item-list-one" *ngFor="let private of privateContent | filter: { width: 640 }">
+      <img src="{{private.picUrl}}" class="list-one-pic" />
+      <div class="list-one-name">{{private.name}}</div>
+    </div>
   </ion-row>
 
   <!-- 首页 推荐MV -->
