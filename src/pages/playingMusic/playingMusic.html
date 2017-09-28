@@ -1,13 +1,38 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      正在播放的音乐
+  <ion-navbar hideBackButton color="dark">
+    <ion-buttons start>
+        <button ion-button icon-only color="light" navPop>
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title class="title">
+      正在播放
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="light">
+        <ion-icon name="ios-share-outline"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
       
 <ion-content>
-        
+  
+  <div class="music-bar">
+    <div class="music-tool-bar">
+          
+    </div>
+    <div class="time-bar">
+      
+    </div>
+    <div class="play-bar">
+      <div class="play-type-btn"></div>
+      <div class="play-pre-btn"></div>
+      <div class="play-btn"></div>
+      <div class="play-next-btn"></div>
+      <div class="play-list"></div>
+    </div>
+  </div>
 </ion-content>
 
       
