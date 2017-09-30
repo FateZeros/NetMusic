@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'playingMusic',
   templateUrl: 'playingMusic.html'
 })
+
 export class PlayingMusic {
   constructor() {
   }

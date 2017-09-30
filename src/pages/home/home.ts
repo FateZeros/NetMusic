@@ -152,4 +152,11 @@ export class HomePage {
     this.appCtrl.getRootNav().push(PlayingMusic)
     // this.appCtrl.getRootNavById('n4')
   }
+
+  // 下拉刷新页面
+  homeRefresh(refresher) {
+    setTimeout(() => {
+      refresher.complete()
+    }, 1500)    
+  }
 }

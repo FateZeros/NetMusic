@@ -7,5 +7,14 @@
 </ion-header>
 
 <ion-content>
+  <!-- 下拉刷新 -->
+  <ion-refresher (ionRefresh)="homeRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="更新中...">
+    </ion-refresher-content>
+  </ion-refresher>
   
 </ion-content>
