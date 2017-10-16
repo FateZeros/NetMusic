@@ -19,6 +19,8 @@ import { NativeService } from "../providers/NativeService";
 
 import { filterPipe } from '../pipes/filterPipe';
 
+import { Camera } from '@ionic-native/camera';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -53,7 +55,8 @@ import { filterPipe } from '../pipes/filterPipe';
       useClass: IonicErrorHandler
     },
     HttpService,
-    NativeService
+    NativeService,
+    Camera
   ]
 })
 export class AppModule {}

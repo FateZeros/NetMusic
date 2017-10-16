@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MusicControls } from '@ionic-native/music-controls';
 
 @Component({
   selector: 'playingMusic',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class PlayingMusic {
-  constructor() {
+  constructor(private musicControls: MusicControls) {
   }
 }
