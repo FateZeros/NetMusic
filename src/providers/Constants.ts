@@ -1,5 +1,7 @@
 /*----------------------------------------后台Api地址----------------------------------------*/
-export const APP_SERVE_URL = 'http://192.168.1.139:4000';
+// export const APP_SERVE_URL = 'http://192.168.1.139:4000';
+//
+export const APP_SERVE_URL = 'http://116.196.124.119:3000';
 
 //是否开发(调试)模式
 export const IS_DEBUG = true;
