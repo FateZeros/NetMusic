@@ -7,7 +7,7 @@
   },
   "proxies":[{
     "path": "/api",
-    "proxyUrl": "http://116.196.124.119:3000"
+    "proxyUrl": "http://117.48.215.217:3000"
   }]
 }
 
