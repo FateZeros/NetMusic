@@ -20,6 +20,7 @@ import { NativeService } from "../providers/NativeService";
 import { filterPipe } from '../pipes/filterPipe';
 
 // import { Camera } from '@ionic-native/camera';
+import { MusicControls } from '@ionic-native/music-controls';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { filterPipe } from '../pipes/filterPipe';
       useClass: IonicErrorHandler
     },
     HttpService,
-    NativeService
+    NativeService,
+    MusicControls
   ]
 })
 export class AppModule {}
